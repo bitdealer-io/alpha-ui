@@ -44,11 +44,15 @@ class App extends Component {
           suggestions={searchSuggestions}
           selectedValue={searchValue}
           selectedLocation={currentLocation}
-          onSelect={(location, selected) => this.setState({ 
-            searchSuggestions: [], 
-            searchValue: selected,
-            currentLocation: location,
-          })}
+          onSelect={(location, selected) => {
+            const [latitude, longitude] = location;
+            this.fetchSellOrders(latitude, longitude);
+            this.setState({ 
+              searchSuggestions: [], 
+              searchValue: selected,
+              currentLocation: location,
+            })
+          }}
           onTextChange={e => this.smartSuggest(e.target.value)} 
         />
         <Map 
