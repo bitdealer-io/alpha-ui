@@ -9,6 +9,7 @@
     "react-leaflet": "^2.1.0",
     "react-scripts": "2.0.4"
   },
+  "homepage" : "http://bitdealer-io.github.io/alpha-ui",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
